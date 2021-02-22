@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "blog",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "collection": "category",
+      "via": "blogs"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "author": {
+      "model": "author",
+      "via": "blogs"
+    }
+  }
+}
